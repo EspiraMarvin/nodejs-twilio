@@ -81,6 +81,7 @@ const server = http.createServer((req, res) => {
             let payloadString = JSON.stringify(payload)
 
             // Return the response - the writeHead inbuilt fn comes with every on response object received by the http server
+            res.setHeader('Content-Type', 'application-json')
             res.writeHead(statusCode)
             // res.end('Hello World is Marvo on the beat\n'); // send res
             res.end(payloadString); // send res
